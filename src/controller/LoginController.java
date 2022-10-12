@@ -13,11 +13,11 @@ public class LoginController {
 
     public LoginController(){
         this.users = new ArrayList<>();
-        populateUsers();
+        addTestUsers();
         login();
     }
 
-    public void populateUsers(){
+    public void addTestUsers(){
         users.add(new EndUser("endUser", "endPassword"));
         users.add(new Employee("empUser", "empPassword"));
         users.add(new Manager("managerUser", "managerPassword"));
