@@ -17,4 +17,14 @@ public class Employee implements User{
     public JFrame getUI() {
         return new EmployeeUI();
     }
+
+    @Override
+    public String getUsername() {
+        return this.logonName;
+    }
+
+    @Override
+    public String getPassword() {
+        return this.logonPass;
+    }
 }

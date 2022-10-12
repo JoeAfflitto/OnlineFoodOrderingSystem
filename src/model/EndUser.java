@@ -17,4 +17,14 @@ public class EndUser implements User{
     public JFrame getUI() {
         return new EndUserUI();
     }
+
+    @Override
+    public String getUsername() {
+        return this.logonName;
+    }
+
+    @Override
+    public String getPassword() {
+        return this.logonPass;
+    }
 }

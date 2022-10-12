@@ -49,8 +49,11 @@ public class LoginController {
 
     boolean isLogin(int type, String name, String pass){
         for(int i=0; i < users.size(); i++){
-            //
+            User current = users.get(i);
+            if(current.getUsername().equals(name) && current.getPassword().equals(pass))
+                return true;
         }
+        return false;
     }
 
 }

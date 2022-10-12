@@ -17,4 +17,14 @@ public class Manager implements User {
     public JFrame getUI() {
         return new ManagerUI();
     }
+
+    @Override
+    public String getUsername() {
+        return this.logonName;
+    }
+
+    @Override
+    public String getPassword() {
+        return this.logonPass;
+    }
 }
