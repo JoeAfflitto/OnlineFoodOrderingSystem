@@ -27,4 +27,8 @@ public class Manager implements User {
     public String getPassword() {
         return this.logonPass;
     }
+
+    public String showDailySales(){
+        return "\nDaily Summary \n--------------- \nSales: 135\nGross Profit: $1,450\nHours of operation: 8";
+    }
 }

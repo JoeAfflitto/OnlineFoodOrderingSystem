@@ -45,6 +45,33 @@ public class LoginController {
         }
 
         System.out.println("Credentials accepted\nWelcome, " + uName);
+        switch (acctType){
+            case 1:
+                EndUser endUser = new EndUser(uName, uPass);
+                ArrayList<String> menu = endUser.getMenu();
+                System.out.println("Here is the menu: ");
+                System.out.println("________________________");
+                for (String item: menu
+                     ) {
+                    System.out.println(item);
+                    
+                }
+                break;
+            case 2:
+                Employee employee = new Employee(uName, uPass);
+                String employeeData = employee.showCustomerData();
+                System.out.println(employeeData);
+                break;
+            case 3:
+                Manager manager = new Manager(uName, uPass);
+                String managerData = manager.showDailySales();
+                System.out.println(managerData);
+                break;
+            default:
+                System.out.println("Not recognized.");
+                break;
+        }
+
     }
 
     boolean isLogin(int type, String name, String pass){

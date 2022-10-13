@@ -23,6 +23,10 @@ public class Employee implements User{
         return this.logonName;
     }
 
+    public String showCustomerData(){
+        return "\nDaily Info\n--------------- \nWARNING: You have (2) orders awaiting fulfillment \nOrders fulfilled: 135\nOrders awaiting fulfillment: 2\nHours worked: 5.5";
+    }
+
     @Override
     public String getPassword() {
         return this.logonPass;
