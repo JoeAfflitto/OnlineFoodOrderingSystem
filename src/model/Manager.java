@@ -7,15 +7,17 @@ import javax.swing.*;
 public class Manager implements User {
     private String logonName;
     private String logonPass;
+    private Business organization;
 
-    public Manager(String lName, String lPass){
+    public Manager(String lName, String lPass, Business business){
         this.logonName = lName;
         this.logonPass = lPass;
+        this.organization = business;
     }
 
     @Override
     public void getUI() {
-        new ManagerUI();
+        new ManagerUI(this);
     }
 
     @Override
@@ -28,7 +30,4 @@ public class Manager implements User {
         return this.logonPass;
     }
 
-    public String showDailySales(){
-        return "\nDaily Summary \n--------------- \nSales: 135\nGross Profit: $1,450\nHours of operation: 8";
-    }
 }

@@ -8,10 +8,12 @@ import javax.swing.*;
 public class Employee implements User {
     private String logonName;
     private String logonPass;
+    public Business employer;
 
-    public Employee(String lName, String lPass){
+    public Employee(String lName, String lPass, Business business){
         this.logonName = lName;
         this.logonPass = lPass;
+        this.employer = business;
     }
 
     @Override
@@ -22,10 +24,6 @@ public class Employee implements User {
     @Override
     public String getUsername() {
         return this.logonName;
-    }
-
-    public String showCustomerData(){
-        return "\nDaily Info\n--------------- \nWARNING: You have (2) orders awaiting fulfillment \nOrders fulfilled: 135\nOrders awaiting fulfillment: 2\nHours worked: 5.5";
     }
 
     @Override

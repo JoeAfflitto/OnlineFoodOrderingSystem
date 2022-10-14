@@ -1,9 +1,6 @@
 package controller;
 
-import model.Employee;
-import model.EndUser;
-import model.Manager;
-import model.User;
+import model.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -14,17 +11,20 @@ public class LoginController {
 
     public LoginController(){
         this.users = new ArrayList<>();
-        addTestUsers();
+        addTestData();
         login();
     }
 
     /**
      * Inserts testable user credentials into the users ArrayList
      */
-    public void addTestUsers(){
+    public void addTestData(){
         users.add(new EndUser("endUser", "endPassword"));
-        users.add(new Employee("empUser", "empPassword"));
-        users.add(new Manager("managerUser", "managerPassword"));
+
+        Business smoothieKing = new Business("Smoothie King");
+        users.add(new Employee("empUser", "empPassword", smoothieKing));
+
+        users.add(new Manager("managerUser", "managerPassword", smoothieKing));
     }
 
     /**

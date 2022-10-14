@@ -11,6 +11,10 @@ public class EmployeeUI {
     }
 
     public void initComponents(){
-        System.out.println(currentEmployee.showCustomerData());
+        printCustomerData();
+    }
+
+    public void printCustomerData(){
+        System.out.println("\nDaily Info\n--------------- \nWARNING: You have (2) orders awaiting fulfillment \nOrders fulfilled: 135\nOrders awaiting fulfillment: 2\nHours worked: 5.5");
     }
 }
