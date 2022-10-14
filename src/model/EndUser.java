@@ -4,10 +4,13 @@ import view.EndUsers.EndUserUI;
 
 import java.util.ArrayList;
 
-
+/**
+ * Datatype model for end-user information processing
+ */
 public class EndUser implements User{
     private String logonName;
     private String logonPass;
+
 
     public EndUser(String lName, String lPass){
         this.logonName = lName;
@@ -15,6 +18,9 @@ public class EndUser implements User{
 
     }
 
+    /**
+     * Initiates the employee user interface
+     */
     @Override
     public void getUI() {
         new EndUserUI(this);

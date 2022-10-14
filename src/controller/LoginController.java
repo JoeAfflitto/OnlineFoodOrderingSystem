@@ -5,6 +5,9 @@ import model.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Manages the logon processes
+ */
 public class LoginController {
     ArrayList<User> users;
     User currentUser;

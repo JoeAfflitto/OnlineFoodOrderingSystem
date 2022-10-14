@@ -2,6 +2,10 @@ package view;
 
 import model.Employee;
 
+/**
+ * To be the JPanel underlying the employee UI
+ * Terminal-level functionality at moment
+ */
 public class EmployeeUI {
     Employee currentEmployee;
 

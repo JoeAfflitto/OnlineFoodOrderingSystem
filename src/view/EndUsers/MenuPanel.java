@@ -4,6 +4,10 @@ import model.EndUser;
 
 import java.util.ArrayList;
 
+/**
+ * Contains menu-displaying related functions
+ * To be a JFrame
+ */
 public class MenuPanel {
     private ArrayList<String> menu = new ArrayList<>();
     private EndUser currentUser;

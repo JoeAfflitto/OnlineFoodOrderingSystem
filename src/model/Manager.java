@@ -4,6 +4,9 @@ import view.ManagerUI;
 
 import javax.swing.*;
 
+/**
+ * Datatype model for manager users
+ */
 public class Manager implements User {
     private String logonName;
     private String logonPass;

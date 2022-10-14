@@ -4,6 +4,10 @@ import model.Manager;
 
 import javax.swing.*;
 
+/**
+ * To be the JPanel underlying the end-user UI
+ * Terminal-level functionality at moment
+ */
 public class ManagerUI {
     private Manager currentManager;
 
