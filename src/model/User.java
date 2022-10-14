@@ -3,7 +3,7 @@ package model;
 import javax.swing.*;
 
 public interface User {
-    JFrame getUI();
+    void getUI();
     String getUsername();
     String getPassword();
 }

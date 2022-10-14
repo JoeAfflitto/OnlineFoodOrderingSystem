@@ -14,8 +14,8 @@ public class Manager implements User {
     }
 
     @Override
-    public JFrame getUI() {
-        return new ManagerUI();
+    public void getUI() {
+        new ManagerUI();
     }
 
     @Override

@@ -1,8 +1,16 @@
 package view;
 
-import javax.swing.*;
 import model.Employee;
 
-public class EmployeeUI extends JFrame {
+public class EmployeeUI {
+    Employee currentEmployee;
 
+    public EmployeeUI(Employee employee){
+        this.currentEmployee = employee;
+        initComponents();
+    }
+
+    public void initComponents(){
+        System.out.println(currentEmployee.showCustomerData());
+    }
 }

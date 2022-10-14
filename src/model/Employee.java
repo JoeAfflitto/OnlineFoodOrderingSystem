@@ -1,10 +1,11 @@
 package model;
 
+import model.User;
 import view.EmployeeUI;
 
 import javax.swing.*;
 
-public class Employee implements User{
+public class Employee implements User {
     private String logonName;
     private String logonPass;
 
@@ -14,8 +15,8 @@ public class Employee implements User{
     }
 
     @Override
-    public JFrame getUI() {
-        return new EmployeeUI();
+    public void getUI() {
+        new EmployeeUI(this);
     }
 
     @Override
