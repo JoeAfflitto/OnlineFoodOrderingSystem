@@ -1,7 +1,9 @@
 package controller;
 
 import model.*;
+import view.LogonUI;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,11 +13,12 @@ import java.util.Scanner;
 public class LoginController {
     ArrayList<User> users;
     User currentUser;
+    LogonUI logonUI;
 
     public LoginController(){
         this.users = new ArrayList<>();
         addTestData();
-        login();
+        this.logonUI = new LogonUI();
     }
 
     /**
@@ -33,7 +36,7 @@ public class LoginController {
     /**
      * Simulates the intended functionality of login window
      */
-    public void login(){
+    public void fakeLoginUI(){
 
         // In place of actual UI for testing
         Scanner scan = new Scanner(System.in);
