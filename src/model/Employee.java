@@ -1,25 +1,22 @@
 package model;
 
-import model.User;
 import view.EmployeeUI;
-
-import javax.swing.*;
 
 public class Employee implements User {
     private String logonName;
     private String logonPass;
-    public Business employer;
+    public Restaurant employer;
 
     /**
      *
      * @param lName Logon name
      * @param lPass Logon password
-     * @param business Pointer to employer's Business object
+     * @param restaurant Pointer to employer's Business object
      */
-    public Employee(String lName, String lPass, Business business){
+    public Employee(String lName, String lPass, Restaurant restaurant){
         this.logonName = lName;
         this.logonPass = lPass;
-        this.employer = business;
+        this.employer = restaurant;
     }
 
     /**

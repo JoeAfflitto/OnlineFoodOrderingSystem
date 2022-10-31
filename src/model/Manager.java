@@ -2,20 +2,18 @@ package model;
 
 import view.ManagerUI;
 
-import javax.swing.*;
-
 /**
  * Datatype model for manager users
  */
 public class Manager implements User {
     private String logonName;
     private String logonPass;
-    private Business organization;
+    private Restaurant organization;
 
-    public Manager(String lName, String lPass, Business business){
+    public Manager(String lName, String lPass, Restaurant restaurant){
         this.logonName = lName;
         this.logonPass = lPass;
-        this.organization = business;
+        this.organization = restaurant;
     }
 
     @Override

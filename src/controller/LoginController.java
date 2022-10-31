@@ -24,7 +24,7 @@ public class LoginController {
     public void addTestData(){
         users.add(new EndUser("endUser", "endPassword"));
 
-        Business smoothieKing = new Business("Smoothie King");
+        Restaurant smoothieKing = new Restaurant("Smoothie King");
         users.add(new Employee("empUser", "empPassword", smoothieKing));
 
         users.add(new Manager("managerUser", "managerPassword", smoothieKing));
