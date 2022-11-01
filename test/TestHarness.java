@@ -1,5 +1,8 @@
 import controller.LoginController;
 
+/**
+ * Original TestHarness class, probably trashing
+ */
 public class TestHarness {
     public static void main(String[] args) {
         // Valid credential: username / password):

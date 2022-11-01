@@ -1,31 +1,27 @@
 package controller;
 
 import model.Objects.EndUser;
-import model.Objects.Restaurant;
-import model.TableModels.RestaurantListModel;
-import view.OrderingUI;
+import view.MenuUI;
+import view.RestaurantSelectionUI;
 
-import java.util.ArrayList;
+import javax.swing.*;
 
 public class OrderController {
     private EndUser currentUser;
-    private OrderingUI ui;
-    private DataController data;
-    private RestaurantListModel listModel;
+
+    // User interfaces
+    private JFrame ui;
+    public DataController data;
 
     public OrderController(EndUser current){
         this.currentUser = current;
         this.data = new DataController();
-        this.listModel = new RestaurantListModel(data.getTheRestaurantList());
-        this.ui = new OrderingUI(this);
+        this.ui = new RestaurantSelectionUI(this);
     }
 
-    public ArrayList<Restaurant> getAvailableBusinesses(){
-        return data.getTheRestaurantList();
+    public void toRestaurantUI(int selection){
+        this.ui = new MenuUI(this);
     }
 
-    public RestaurantListModel getListModel(){
-        return this.listModel;
-    }
 
 }
