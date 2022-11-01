@@ -10,6 +10,8 @@ public class DataController {
     public DataController(){
         this.theRestaurantList = new ArrayList<>();
         theRestaurantList.add(new Restaurant("Title I"));
+        theRestaurantList.add(new Restaurant("Title II"));
+
     }
 
 

@@ -2,7 +2,7 @@ package controller;
 
 import model.Objects.EndUser;
 import model.Objects.Restaurant;
-import model.TableModels.RestaurantTableModel;
+import model.TableModels.RestaurantListModel;
 import view.OrderingUI;
 
 import java.util.ArrayList;
@@ -11,20 +11,21 @@ public class OrderController {
     private EndUser currentUser;
     private OrderingUI ui;
     private DataController data;
-    private RestaurantTableModel tableModel;
+    private RestaurantListModel listModel;
 
     public OrderController(EndUser current){
         this.currentUser = current;
         this.data = new DataController();
-        this.ui = new OrderingUI();
-        this.tableModel = new RestaurantTableModel(data.getTheRestaurantList());
+        this.listModel = new RestaurantListModel(data.getTheRestaurantList());
+        this.ui = new OrderingUI(this);
     }
 
     public ArrayList<Restaurant> getAvailableBusinesses(){
         return data.getTheRestaurantList();
     }
 
-    public RestaurantTableModel getTheRestaurantTableModel() {
-        return this.tableModel;
+    public RestaurantListModel getListModel(){
+        return this.listModel;
     }
+
 }
