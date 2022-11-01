@@ -1,9 +1,6 @@
 package view.EndUsers;
 
-import model.EndUser;
-
-import javax.swing.*;
-import java.util.ArrayList;
+import model.Objects.EndUser;
 
 /**
  * To be the JPanel underlying the end-user UI

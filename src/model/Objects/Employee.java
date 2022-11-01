@@ -1,6 +1,4 @@
-package model;
-
-import view.EmployeeUI;
+package model.Objects;
 
 public class Employee implements User {
     private String logonName;
@@ -23,7 +21,7 @@ public class Employee implements User {
      * Initiates the employee user interface
      */
     @Override
-    public void getUI() {
+    public void directController() {
         new EmployeeUI(this);
     }
 

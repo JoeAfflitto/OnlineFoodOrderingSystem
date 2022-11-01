@@ -1,8 +1,6 @@
-package model;
+package model.Objects;
 
-import view.EndUsers.EndUserUI;
-
-import java.util.ArrayList;
+import controller.OrderController;
 
 /**
  * Datatype model for end-user information processing
@@ -22,8 +20,8 @@ public class EndUser implements User{
      * Initiates the employee user interface
      */
     @Override
-    public void getUI() {
-        new EndUserUI(this);
+    public void directController() {
+        new OrderController(this);
     }
 
     @Override

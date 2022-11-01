@@ -1,6 +1,4 @@
-package model;
-
-import view.ManagerUI;
+package model.Objects;
 
 /**
  * Datatype model for manager users
@@ -17,7 +15,7 @@ public class Manager implements User {
     }
 
     @Override
-    public void getUI() {
+    public void directController() {
         new ManagerUI(this);
     }
 

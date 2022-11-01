@@ -1,4 +1,4 @@
-package model;
+package model.Objects;
 
 import java.util.ArrayList;
 
@@ -9,6 +9,7 @@ public class Restaurant {
     private String name;
     // TODO: Storage of other business-related info
     private ArrayList<User> userList;
+    private ArrayList<Product> products;
 
     public Restaurant(String title) {
         this.name = title;

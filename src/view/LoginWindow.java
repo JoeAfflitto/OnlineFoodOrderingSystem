@@ -41,6 +41,6 @@ public class LoginWindow extends JFrame implements ActionListener {
             this.pack();
         }
 
-        else tryAgainLabel.setText("Password accepted.");
+        else this.setVisible(false);
     }
 }

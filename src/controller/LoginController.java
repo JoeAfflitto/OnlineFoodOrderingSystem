@@ -1,6 +1,6 @@
 package controller;
 
-import model.*;
+import model.Objects.*;
 import view.LoginWindow;
 
 import java.util.ArrayList;
@@ -43,12 +43,11 @@ public class LoginController {
         for (User current : users) {
             if (current.getUsername().equals(name) && current.getPassword().equals(pass)) {
                 currentUser = current;
-                current.getUI();
+                current.directController();
                 return true;
             }
         }
         return false;
     }
-
 
 }

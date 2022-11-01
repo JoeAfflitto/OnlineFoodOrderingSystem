@@ -1,6 +1,6 @@
 package view.EndUsers;
 
-import model.EndUser;
+import model.Objects.EndUser;
 
 import java.util.ArrayList;
 
