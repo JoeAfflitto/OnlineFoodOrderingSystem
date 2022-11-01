@@ -33,8 +33,7 @@ public class LoginController {
     }
 
     /**
-     * For checking provided credentials against user database
-     * Additionally sets currentUser variable for use elsewhere in controller
+     * Checks login against appropriate data
      *
      * @param name username as inputted by user upon login prompt
      * @param pass password as inputted by user upon login prompt
@@ -44,9 +43,12 @@ public class LoginController {
         for (User current : users) {
             if (current.getUsername().equals(name) && current.getPassword().equals(pass)) {
                 currentUser = current;
+                current.getUI();
                 return true;
             }
         }
         return false;
     }
+
+
 }
