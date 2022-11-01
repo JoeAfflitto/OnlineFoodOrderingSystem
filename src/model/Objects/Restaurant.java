@@ -27,4 +27,8 @@ public class Restaurant {
     public void removeUser(User u){
         this.userList.remove(u);
     }
+
+    public String getName(){
+        return this.name;
+    }
 }

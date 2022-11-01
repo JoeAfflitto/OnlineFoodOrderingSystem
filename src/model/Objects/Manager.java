@@ -16,7 +16,7 @@ public class Manager implements User {
 
     @Override
     public void directController() {
-        new ManagerUI(this);
+        // new ManagerUI(this);
     }
 
     @Override

@@ -22,7 +22,7 @@ public class Employee implements User {
      */
     @Override
     public void directController() {
-        new EmployeeUI(this);
+        // new EmployeeUI(this);
     }
 
     /**
