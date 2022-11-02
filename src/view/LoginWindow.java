@@ -34,7 +34,12 @@ public class LoginWindow extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        boolean valid = ctl.isLogin(textField1.getText(), String.valueOf(passwordField1.getPassword()));
+        boolean valid = false;
+        try {
+            valid = ctl.isLogin(textField1.getText(), String.valueOf(passwordField1.getPassword()));
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
 
         if (!valid){
             tryAgainLabel.setVisible(true);

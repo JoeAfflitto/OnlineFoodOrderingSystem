@@ -39,7 +39,7 @@ public class LoginController {
      * @param pass password as inputted by user upon login prompt
      * @return true if valid credentials are passed, else false
      */
-    public boolean isLogin(String name, String pass){
+    public boolean isLogin(String name, String pass) throws Exception {
         for (User current : users) {
             if (current.getUsername().equals(name) && current.getPassword().equals(pass)) {
                 currentUser = current;

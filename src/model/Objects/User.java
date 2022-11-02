@@ -8,7 +8,7 @@ public interface User {
     /**
      * To instantiate respective user interface
      */
-    void directController();
+    void directController() throws Exception;
     String getUsername();
     String getPassword();
 }

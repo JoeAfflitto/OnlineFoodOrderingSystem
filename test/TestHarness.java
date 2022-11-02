@@ -1,15 +1,17 @@
-import controller.LoginController;
+import dataAccess.DataConnector;
+
 
 /**
  * Original TestHarness class, probably trashing
  */
 public class TestHarness {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // Valid credential: username / password):
         // End-user: endUser / endPassword
         // Employee: empUser / empPassword
         // Manager: managerUser / managerPassword
-        LoginController lc = new LoginController();
+        //LoginController lc = new LoginController();
 
+        DataConnector s = new DataConnector();
     }
 }

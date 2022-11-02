@@ -20,7 +20,7 @@ public class EndUser implements User{
      * Initiates the employee user interface
      */
     @Override
-    public void directController() {
+    public void directController() throws Exception {
         new OrderController(this);
     }
 

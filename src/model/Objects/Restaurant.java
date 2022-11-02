@@ -1,11 +1,12 @@
 package model.Objects;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Datatype model for individual businesses
  */
-public class Restaurant {
+public class Restaurant implements Serializable {
     private String name;
     // TODO: Storage of other business-related info
     private ArrayList<User> userList;

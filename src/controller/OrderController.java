@@ -13,7 +13,7 @@ public class OrderController {
     private JFrame ui;
     public DataController data;
 
-    public OrderController(EndUser current){
+    public OrderController(EndUser current) throws Exception {
         this.currentUser = current;
         this.data = new DataController();
         this.ui = new RestaurantSelectionUI(this);
