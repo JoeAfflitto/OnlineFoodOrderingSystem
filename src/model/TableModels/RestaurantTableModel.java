@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class RestaurantTableModel extends AbstractTableModel {
     private ArrayList<Restaurant> restaurantList;
-    private String[] colNames = {"Col 1"};
+    private String[] colNames = {"Restaurant Name"};
 
     public RestaurantTableModel(ArrayList<Restaurant> restaurantArrayList){
         this.restaurantList = restaurantArrayList;

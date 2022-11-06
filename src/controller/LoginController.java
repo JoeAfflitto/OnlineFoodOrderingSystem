@@ -38,6 +38,7 @@ public class LoginController {
      * @param name username as inputted by user upon login prompt
      * @param pass password as inputted by user upon login prompt
      * @return true if valid credentials are passed, else false
+     *
      */
     public boolean isLogin(String name, String pass) throws Exception {
         for (User current : users) {
