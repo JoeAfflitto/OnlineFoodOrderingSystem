@@ -1,3 +1,4 @@
+import controller.LoginController;
 import dataAccess.DataConnector;
 
 
@@ -10,8 +11,8 @@ public class TestHarness {
         // End-user: endUser / endPassword
         // Employee: empUser / empPassword
         // Manager: managerUser / managerPassword
-        //LoginController lc = new LoginController();
+        LoginController lc = new LoginController();
 
-        DataConnector s = new DataConnector();
+        // DataConnector s = new DataConnector();
     }
 }

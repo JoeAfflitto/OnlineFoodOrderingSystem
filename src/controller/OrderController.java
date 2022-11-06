@@ -9,7 +9,6 @@ import javax.swing.*;
 public class OrderController {
     private EndUser currentUser;
 
-    // User interfaces
     private JFrame ui;
     public DataController data;
 
@@ -20,7 +19,7 @@ public class OrderController {
     }
 
     public void toRestaurantUI(int selection){
-        this.ui = new MenuUI(this);
+        this.ui = new MenuUI(selection, this);
     }
 
 

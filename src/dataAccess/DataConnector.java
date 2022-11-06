@@ -8,20 +8,18 @@ package dataAccess;
  * primary key (id));
  **/
 
-import model.Lists.ListObject;
-import model.Lists.RestaurantList;
 import model.Objects.Restaurant;
 
-import java.io.*;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
-public class DataConnector {
+public class DataConnector { /*
     private Connection connection;
     private PreparedStatement ps;
     private ResultSet rs;
 
     public DataConnector() throws Exception {
-        this.connection = getConnection();
 
         loadRestaurantsFromDB("restaurants");
     }
@@ -33,7 +31,6 @@ public class DataConnector {
     }
 
     public RestaurantList loadRestaurantsFromDB(String ln) throws SQLException, IOException, ClassNotFoundException {
-        RestaurantList lo = new RestaurantList();
 
         Statement st = connection.createStatement();
         rs = st.executeQuery("SELECT * FROM foodsystem.java_objects");
@@ -45,16 +42,6 @@ public class DataConnector {
         }
 
         return lo;
-    }
-
-    public static Connection getConnection() throws Exception {
-        String driver = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost/";
-        String username = "<hidden>";
-        String password = "<hidden>";
-        Class.forName(driver);
-        Connection conn = DriverManager.getConnection(url, username, password);
-        return conn;
     }
 
     public ResultSet uploadRestaurant(Restaurant restaurant, int rowIndex) throws Exception {
@@ -87,8 +74,8 @@ public class DataConnector {
         if (buf != null) {
             ObjectInputStream objectIn = new ObjectInputStream(
                     new ByteArrayInputStream(buf));
-            return (Restaurant) objectIn.readObject();
+            return objectIn.readObject();
         }
         return null;
-    }
+    } */
 }

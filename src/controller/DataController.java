@@ -1,5 +1,6 @@
 package controller;
 
+import dataAccess.RestaurantData;
 import model.Objects.Restaurant;
 import model.TableModels.RestaurantTableModel;
 
@@ -8,14 +9,12 @@ import java.util.ArrayList;
 public class DataController {
     private ArrayList<Restaurant> theRestaurantList;
     private RestaurantTableModel tableModel;
+    private RestaurantData rd;
 
     public DataController() throws Exception {
-        // TODO: Replace with db
-        this.theRestaurantList = new ArrayList<>();
+        rd = new RestaurantData();
+        this.theRestaurantList = rd.getRestaurantList();
 
-
-        theRestaurantList.add(new Restaurant("Title I"));
-        theRestaurantList.add(new Restaurant("Title II"));
         this.tableModel = new RestaurantTableModel(theRestaurantList);
     }
 

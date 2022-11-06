@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class MenuUI extends JFrame {
 
-    public MenuUI(OrderController orderController) {
+    public MenuUI(int index, OrderController orderController) {
 
     }
 }
