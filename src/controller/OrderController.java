@@ -4,8 +4,9 @@ import dataAccess.hopefullyGoodConnector;
 import model.UserObjects.EndUser;
 import model.UserObjects.Restaurant;
 import model.TableModels.RestaurantTableModel;
-import view.MenuUI;
-import view.RestaurantSelectionUI;
+import view.EndUserFlow.MenuUI;
+import view.EndUserFlow.PaymentUI;
+import view.EndUserFlow.RestaurantSelectionUI;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -21,17 +22,26 @@ public class OrderController {
     public OrderController(EndUser current) throws Exception {
         this.currentUser = current;
         hopefullyGoodConnector rd = new hopefullyGoodConnector();
-        this.theRestaurantList = rd.getRestaurantList();
-        if(theRestaurantList.isEmpty())
-            theRestaurantList.add(new Restaurant("Empty Database"));
+        // this.theRestaurantList = rd.getRestaurantList();
+        // if(theRestaurantList.isEmpty())
+        //     theRestaurantList.add(new Restaurant("Empty Database"));
+
+        theRestaurantList = new ArrayList<>();
+        theRestaurantList.add(new Restaurant("Asdf"));
 
         this.ui = new RestaurantSelectionUI(this);
         this.tableModel = new RestaurantTableModel(theRestaurantList);
 
     }
 
-    public void toRestaurantUI(int selection){
+    public void toMenuUI(int selection){
+        this.ui.setVisible(false);
         this.ui = new MenuUI(selection, this);
+    }
+
+    public void toPaymentUI(){
+        ui.setVisible(false);
+        ui = new PaymentUI();
     }
 
     public RestaurantTableModel getTheTableModel() {

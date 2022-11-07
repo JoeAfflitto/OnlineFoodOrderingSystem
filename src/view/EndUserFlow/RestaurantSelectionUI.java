@@ -1,4 +1,4 @@
-package view;
+package view.EndUserFlow;
 
 import controller.OrderController;
 import model.UserObjects.EndUser;
@@ -63,7 +63,7 @@ public class RestaurantSelectionUI extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == btnSelect){
-            controller.toRestaurantUI(table.getSelectedRow());
+            controller.toMenuUI(table.getSelectedRow());
         }
     }
 

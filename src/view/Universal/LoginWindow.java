@@ -1,4 +1,4 @@
-package view;
+package view.Universal;
 
 import controller.LoginController;
 
