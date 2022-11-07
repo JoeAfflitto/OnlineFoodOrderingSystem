@@ -23,7 +23,7 @@ public class hopefullyGoodConnector {
 
         conn = getConn();
         st = conn.createStatement();
-        rs = st.executeQuery("SELECT object_value FROM main.java_objects");
+        rs = st.executeQuery("SELECT object_value FROM");
 
         while(rs.next()){
             restaurantList.add((Restaurant) this.read(rs, 1));
@@ -71,12 +71,11 @@ public class hopefullyGoodConnector {
 
     private Connection getConn() throws ClassNotFoundException, SQLException {
        //  String filename = "~/sqlite/foodsys_object_db.sqlite";
-        String filename = "foodsys_object_db.sqlite";
-        String url = "jdbc:sqlite:";
+        String filename = "jdbc:sqlite:foodsys_object_db";
 
         // try { Class.forName("xerial."); } catch(Exception e) {e.printStackTrace();};
 
-        this.conn = (DriverManager.getConnection(url + filename));
+        this.conn = (DriverManager.getConnection(filename));
 
         return conn;
 

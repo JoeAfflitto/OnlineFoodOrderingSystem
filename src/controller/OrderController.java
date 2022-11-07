@@ -22,6 +22,8 @@ public class OrderController {
         this.currentUser = current;
         hopefullyGoodConnector rd = new hopefullyGoodConnector();
         this.theRestaurantList = rd.getRestaurantList();
+        if(theRestaurantList.isEmpty())
+            theRestaurantList.add(new Restaurant("Empty Database"));
 
         this.ui = new RestaurantSelectionUI(this);
         this.tableModel = new RestaurantTableModel(theRestaurantList);

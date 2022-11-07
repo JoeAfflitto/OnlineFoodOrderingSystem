@@ -25,8 +25,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" scope="PROVIDED" name="mysql.connector.java" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="oracle.database.jdbc.ojdbc11" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="xerial.sqlite.jdbc" level="project" />
+    <orderEntry type="library" name="apache.maven.plugins.shade.plugin" level="project" />
   </component>
 </module>
