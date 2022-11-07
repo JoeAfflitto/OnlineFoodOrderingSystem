@@ -69,9 +69,11 @@ public class hopefullyGoodConnector {
     }
 
     private Connection getConn() throws ClassNotFoundException, SQLException {
-        String url = "jdbc:sqlite:foodsys_object_db.sqlite";
+       //  String filename = "~/sqlite/foodsys_object_db.sqlite";
+        String filename = "/Users/psu/IdeaProjects/OnlineFoodOrderingSystemPull/resources/foodsys_object_db.sqlite";
+        String url = "jdbc:sqlite:";
 
-        return DriverManager.getConnection(url);
+        return DriverManager.getConnection(url + filename);
     }
 
     /*
