@@ -12,6 +12,7 @@ public class hopefullyGoodConnector {
     private Connection conn;
     private Statement st;
     private ResultSet rs;
+    private final String tableString = "main.java_objects";
 
 
     /*
@@ -35,8 +36,8 @@ public class hopefullyGoodConnector {
      */
     public Restaurant getRestaurant(int index) throws SQLException, IOException, ClassNotFoundException {
         st = conn.createStatement();
-        rs = st.executeQuery("SELECT object_value FROM foodsystem.java_objects" +
-                "WHERE id = " + index);
+        rs = st.executeQuery("SELECT object_value FROM " + tableString +
+                " WHERE id = " + index);
         return (Restaurant) this.read(rs, index);
     }
     // Uploading functions
@@ -46,7 +47,7 @@ public class hopefullyGoodConnector {
      */
     public void uploadRestaurant(Restaurant restaurant, int rowIndex) throws Exception {
         Connection conn = getConn();
-        PreparedStatement ps = conn.prepareStatement("INSERT INTO foodsystem.java_objects(id, object_value) values (?, ?)", Statement.RETURN_GENERATED_KEYS);
+        PreparedStatement ps = conn.prepareStatement("INSERT INTO " + tableString + "(id, object_value) values (?, ?)", Statement.RETURN_GENERATED_KEYS);
 
         // Set restaurant ID
         ps.setInt(1, rowIndex);
@@ -57,7 +58,7 @@ public class hopefullyGoodConnector {
         ps.executeUpdate();
 
         Statement st = conn.createStatement();
-        st.executeQuery("SELECT * FROM foodsystem.java_objects");
+        st.executeQuery("SELECT * FROM " + tableString);
     }
     private byte[] toBlob(Object obj)
             throws SQLException, IOException {
@@ -70,10 +71,15 @@ public class hopefullyGoodConnector {
 
     private Connection getConn() throws ClassNotFoundException, SQLException {
        //  String filename = "~/sqlite/foodsys_object_db.sqlite";
-        String filename = "/Users/psu/IdeaProjects/OnlineFoodOrderingSystemPull/resources/foodsys_object_db.sqlite";
+        String filename = "foodsys_object_db.sqlite";
         String url = "jdbc:sqlite:";
 
-        return DriverManager.getConnection(url + filename);
+        // try { Class.forName("xerial."); } catch(Exception e) {e.printStackTrace();};
+
+        this.conn = (DriverManager.getConnection(url + filename));
+
+        return conn;
+
     }
 
     /*
