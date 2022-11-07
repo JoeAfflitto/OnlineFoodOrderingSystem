@@ -1,6 +1,6 @@
 package controller;
 
-import dataAccess.RestaurantData;
+import dataAccess.OldDBconnector;
 import model.Objects.Restaurant;
 import model.TableModels.RestaurantTableModel;
 
@@ -9,10 +9,10 @@ import java.util.ArrayList;
 public class DataController {
     private ArrayList<Restaurant> theRestaurantList;
     private RestaurantTableModel tableModel;
-    private RestaurantData rd;
+    private OldDBconnector rd;
 
     public DataController() throws Exception {
-        rd = new RestaurantData();
+        rd = new OldDBconnector();
         this.theRestaurantList = rd.getRestaurantList();
 
         this.tableModel = new RestaurantTableModel(theRestaurantList);

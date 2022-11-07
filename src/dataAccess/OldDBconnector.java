@@ -6,7 +6,7 @@ import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class RestaurantData {
+public class OldDBconnector {
     private ArrayList<Restaurant> restaurantList;
     private Connection conn;
     private Statement st;

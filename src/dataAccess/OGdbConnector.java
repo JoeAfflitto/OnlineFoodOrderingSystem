@@ -8,13 +8,7 @@ package dataAccess;
  * primary key (id));
  **/
 
-import model.Objects.Restaurant;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
-public class DataConnector { /*
+public class OGdbConnector { /*
     private Connection connection;
     private PreparedStatement ps;
     private ResultSet rs;
