@@ -1,4 +1,4 @@
-package model.Objects;
+package model.UserObjects;
 
 /**
  * Datatype model for manager users

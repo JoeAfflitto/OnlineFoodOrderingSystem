@@ -1,4 +1,4 @@
-package model.Objects;
+package model.UserObjects;
 
 /**
  * Interface ensuring each user type can be processed appropriately by the login controller

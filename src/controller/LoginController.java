@@ -1,6 +1,6 @@
 package controller;
 
-import model.Objects.*;
+import model.UserObjects.*;
 import view.LoginWindow;
 
 import java.util.ArrayList;

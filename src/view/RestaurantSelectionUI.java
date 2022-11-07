@@ -1,16 +1,9 @@
 package view;
 
 import controller.OrderController;
-import model.Objects.EndUser;
-import model.Objects.Restaurant;
-import model.TableModels.RestaurantTableModel;
+import model.UserObjects.EndUser;
 
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-import javax.swing.event.TableModelEvent;
-import javax.swing.event.TableModelListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -39,7 +32,7 @@ public class RestaurantSelectionUI extends JFrame implements ActionListener {
 
         // Table panel configuration
         tablePanel = new JPanel();
-        table = new JTable(controller.data.getTheTableModel());
+        table = new JTable(controller.getTheTableModel());
 
         // Scroller configuration
         tableScroller = new JScrollPane(table);
@@ -72,5 +65,9 @@ public class RestaurantSelectionUI extends JFrame implements ActionListener {
         if(e.getSource() == btnSelect){
             controller.toRestaurantUI(table.getSelectedRow());
         }
+    }
+
+    public static void main(String[] args) throws Exception {
+        RestaurantSelectionUI ui = new RestaurantSelectionUI(new OrderController(new EndUser("endUser", "endPassword")));
     }
 }

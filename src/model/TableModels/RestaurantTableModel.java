@@ -1,6 +1,6 @@
 package model.TableModels;
 
-import model.Objects.Restaurant;
+import model.UserObjects.Restaurant;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;

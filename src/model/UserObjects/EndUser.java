@@ -1,4 +1,4 @@
-package model.Objects;
+package model.UserObjects;
 
 import controller.OrderController;
 

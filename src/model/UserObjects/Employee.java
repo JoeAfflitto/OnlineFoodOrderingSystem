@@ -1,4 +1,4 @@
-package model.Objects;
+package model.UserObjects;
 
 public class Employee implements User {
     private String logonName;
