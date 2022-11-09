@@ -1,5 +1,7 @@
 package model.Users;
 
+import model.Restauraunts.CartItem;
+
 public class Product {
     private String name;
     private double price;
@@ -33,5 +35,9 @@ public class Product {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public CartItem toCartItem(int quantity){
+        return new CartItem(this.name, this.desc, this.price, quantity);
     }
 }

@@ -4,8 +4,10 @@ import controller.OrderController;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class CartView extends JFrame {
+public class CartView extends JFrame implements ActionListener {
 
     // Table vars
     private JPanel tablePanel;
@@ -42,7 +44,9 @@ public class CartView extends JFrame {
         // Toolbar setup
         toolBar = new JToolBar();
         backBtn = new JButton("Back");
+        backBtn.addActionListener(this);
         checkoutBtn = new JButton("Checkout");
+        checkoutBtn.addActionListener(this);
 
         toolBar.add(backBtn);
         toolBar.add(checkoutBtn);
@@ -55,5 +59,16 @@ public class CartView extends JFrame {
 
         this.setSize(500, 400);
         this.setLocationRelativeTo(null);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == backBtn){
+            // Back button logic for future
+        }
+
+        if(e.getSource() == checkoutBtn){
+            ctl.toPaymentUI();
+        }
     }
 }

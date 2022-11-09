@@ -13,7 +13,8 @@ public class MenuUI extends JFrame implements ActionListener {
     OrderController controller;
     JPanel tablePanel;
     JTable table;
-
+    JButton btnAddToCart;
+    JButton btnGoCheckout;
 
     public MenuUI(ProductTableModel tableModel, OrderController orderController) {
         controller = orderController;
@@ -28,8 +29,12 @@ public class MenuUI extends JFrame implements ActionListener {
 
         // Button panel configs
         JPanel btnPanel = new JPanel();
-        JButton btnAddToCart = new JButton("Add to Cart");
-        JButton btnGoCheckout = new JButton("Checkout");
+        btnAddToCart = new JButton("Add to Cart");
+        btnGoCheckout = new JButton("Checkout");
+
+        btnGoCheckout.addActionListener(this);
+        btnAddToCart.addActionListener(this);
+
         btnPanel.add(btnAddToCart);
         btnPanel.add(btnGoCheckout);
 
@@ -47,6 +52,12 @@ public class MenuUI extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == btnAddToCart){
+            controller.addToCart(table.getSelectedRow(), 1);
+        }
 
+        if(e.getSource() == btnGoCheckout){
+            controller.toCartUI();
+        }
     }
 }
