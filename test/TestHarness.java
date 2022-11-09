@@ -1,4 +1,7 @@
 import controller.LoginController;
+import model.Users.Product;
+
+import java.util.ArrayList;
 
 
 /**
@@ -11,7 +14,5 @@ public class TestHarness {
         // Employee: empUser / empPassword
         // Manager: managerUser / managerPassword
         LoginController lc = new LoginController();
-
-        // DataConnector s = new DataConnector();
     }
 }

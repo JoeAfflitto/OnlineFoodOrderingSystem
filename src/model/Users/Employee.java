@@ -1,4 +1,6 @@
-package model.UserObjects;
+package model.Users;
+
+import model.Restauraunts.Restaurant;
 
 public class Employee implements User {
     private String logonName;

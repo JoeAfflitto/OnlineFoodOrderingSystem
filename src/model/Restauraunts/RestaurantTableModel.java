@@ -1,6 +1,6 @@
-package model.TableModels;
+package model.Restauraunts;
 
-import model.UserObjects.Restaurant;
+import model.Restauraunts.Restaurant;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
@@ -24,8 +24,11 @@ public class RestaurantTableModel extends AbstractTableModel {
     }
 
     @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
-        return restaurantList.get(rowIndex);
+    public String getValueAt(int rowIndex, int columnIndex) {
+        switch(columnIndex){
+            case 0: return restaurantList.get(rowIndex).getBusinessName();
+        }
+        return null;
     }
 
     @Override

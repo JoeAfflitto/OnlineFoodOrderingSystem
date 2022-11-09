@@ -1,4 +1,4 @@
-package model.UserObjects;
+package model.Users;
 
 public class Product {
     private String name;

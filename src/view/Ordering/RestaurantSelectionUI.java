@@ -1,7 +1,7 @@
-package view.EndUserFlow;
+package view.Ordering;
 
 import controller.OrderController;
-import model.UserObjects.EndUser;
+import model.Users.EndUser;
 
 import javax.swing.*;
 import java.awt.*;

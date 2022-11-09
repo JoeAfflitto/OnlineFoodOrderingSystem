@@ -1,6 +1,6 @@
 package dataAccess;
 
-import model.UserObjects.Restaurant;
+import model.Restauraunts.Restaurant;
 
 import java.io.*;
 import java.sql.*;

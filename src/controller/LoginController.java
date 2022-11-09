@@ -1,6 +1,7 @@
 package controller;
 
-import model.UserObjects.*;
+import model.Restauraunts.Restaurant;
+import model.Users.*;
 import view.Universal.LoginWindow;
 
 import java.util.ArrayList;

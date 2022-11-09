@@ -1,4 +1,6 @@
-package model.UserObjects;
+package model.Users;
+
+import model.Restauraunts.Restaurant;
 
 /**
  * Datatype model for manager users
