@@ -2,8 +2,10 @@ package controller;
 
 import model.Restauraunts.Restaurant;
 import model.Users.*;
+import view.Universal.LoginUI;
 import view.Universal.LoginWindow;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -12,12 +14,12 @@ import java.util.ArrayList;
 public class LoginController {
     ArrayList<User> users;
     User currentUser;
-    LoginWindow logonUI;
+    JFrame logonUI;
 
     public LoginController(){
         this.users = new ArrayList<>();
         addTestData();
-        this.logonUI = new LoginWindow(this);
+        this.logonUI = new LoginWindow(this); // joe LoginUI(this);
 
     }
 
