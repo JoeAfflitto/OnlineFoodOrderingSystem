@@ -25,4 +25,4 @@ Button allows for drop down menu retraction and protraction
 <h4>Template</h4>
 Added template of abstractuser 
 <h4>Calendar Picker</h4>
-Added date picker on checkout screen
+Added date picker on checkout screen 
