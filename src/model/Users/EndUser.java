@@ -5,7 +5,7 @@ import controller.OrderController;
 /**
  * Datatype model for end-user information processing
  */
-public class EndUser implements User{
+public class EndUser extends AbstractUser implements User{
     private String logonName;
     private String logonPass;
 

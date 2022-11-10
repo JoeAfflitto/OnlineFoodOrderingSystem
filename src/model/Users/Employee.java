@@ -2,7 +2,7 @@ package model.Users;
 
 import model.Restauraunts.Restaurant;
 
-public class Employee implements User {
+public class Employee extends AbstractUser implements User {
     private String logonName;
     private String logonPass;
     public Restaurant employer;

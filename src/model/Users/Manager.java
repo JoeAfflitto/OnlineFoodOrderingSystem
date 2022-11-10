@@ -5,7 +5,7 @@ import model.Restauraunts.Restaurant;
 /**
  * Datatype model for manager users
  */
-public class Manager implements User {
+public class Manager extends AbstractUser implements User {
     private String logonName;
     private String logonPass;
     private Restaurant organization;
