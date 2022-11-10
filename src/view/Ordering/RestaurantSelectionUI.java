@@ -16,6 +16,7 @@ public class RestaurantSelectionUI extends JFrame implements ActionListener {
     private JPanel buttonPanel;
     private JButton btnSelect;
 
+
     public RestaurantSelectionUI(OrderController ctl){
         controller = ctl;
         initComponents();
@@ -46,6 +47,8 @@ public class RestaurantSelectionUI extends JFrame implements ActionListener {
         btnSelect = new JButton("Select");
         btnSelect.addActionListener(this);
         buttonPanel.add(btnSelect);
+
+
 
 
         // General window configurations

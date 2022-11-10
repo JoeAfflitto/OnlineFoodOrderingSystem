@@ -41,10 +41,17 @@ public class OrderController {
     /**
      * Creates testable restaurants
      */
+
+
+
     private void createRestaurantList() {
         theRestaurantList = new ArrayList<>();
         Restaurant one = new Restaurant("McDonalds");
         theRestaurantList.add(one);
+        Restaurant two = new Restaurant("Chipotle");
+        theRestaurantList.add(two);
+
+        // Can continue adding/updating restaurants
 
     }
 

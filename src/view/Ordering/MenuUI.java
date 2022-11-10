@@ -16,6 +16,11 @@ public class MenuUI extends JFrame implements ActionListener {
     JButton btnAddToCart;
     JButton btnGoCheckout;
 
+    //initialize accordion menu elements
+    JButton btnShowMenu;
+    JPanel menuPanel;
+    boolean menuVisible = false;
+
     public MenuUI(ProductTableModel tableModel, OrderController orderController) {
         controller = orderController;
         table = new JTable(tableModel);
@@ -26,6 +31,7 @@ public class MenuUI extends JFrame implements ActionListener {
         setTitle("Menu View");
         tablePanel = new JPanel();
         tablePanel.add(table);
+        tablePanel.setVisible(false);
 
         // Button panel configs
         JPanel btnPanel = new JPanel();
@@ -38,6 +44,12 @@ public class MenuUI extends JFrame implements ActionListener {
         btnPanel.add(btnAddToCart);
         btnPanel.add(btnGoCheckout);
 
+        btnShowMenu = new JButton("Show Menu");
+        btnShowMenu.addActionListener(this);
+
+        menuPanel = new JPanel();
+        menuPanel.add(btnShowMenu);
+
         // General window configurations
         this.setSize(500, 400);
         this.setLocationRelativeTo(null);
@@ -45,6 +57,8 @@ public class MenuUI extends JFrame implements ActionListener {
         // this.getContentPane().add(titlePanel, BorderLayout.NORTH);
         this.getContentPane().add(tablePanel, BorderLayout.CENTER);
         this.getContentPane().add(btnPanel, BorderLayout.SOUTH);
+        this.getContentPane().add(menuPanel, BorderLayout.NORTH);
+
 
         // Display the frame
         this.setVisible(true);
@@ -58,6 +72,20 @@ public class MenuUI extends JFrame implements ActionListener {
 
         if(e.getSource() == btnGoCheckout){
             controller.toCartUI();
+        }
+
+        // Show/Hide accordion menu items
+        if(e.getSource() == btnShowMenu){
+            if (!menuVisible){
+                tablePanel.setVisible(true);
+                menuVisible = true;
+                btnShowMenu.setText("Hide Menu");
+            }
+            else {
+                tablePanel.setVisible(false);
+                menuVisible = false;
+                btnShowMenu.setText("Show Menu");
+            }
         }
     }
 }
