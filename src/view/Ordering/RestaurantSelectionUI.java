@@ -58,6 +58,8 @@ public class RestaurantSelectionUI extends JFrame implements ActionListener {
         this.getContentPane().add(titlePanel, BorderLayout.NORTH);
         this.getContentPane().add(tablePanel, BorderLayout.CENTER);
         this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
 
         // Display the frame
         this.setVisible(true);

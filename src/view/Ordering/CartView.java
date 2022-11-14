@@ -88,6 +88,8 @@ public class CartView extends JFrame implements ActionListener {
 
         this.setSize(500, 400);
         this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
     }
 
     @Override

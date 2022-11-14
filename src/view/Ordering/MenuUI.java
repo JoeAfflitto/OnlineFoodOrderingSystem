@@ -58,6 +58,7 @@ public class MenuUI extends JFrame implements ActionListener {
         this.getContentPane().add(tablePanel, BorderLayout.CENTER);
         this.getContentPane().add(btnPanel, BorderLayout.SOUTH);
         this.getContentPane().add(menuPanel, BorderLayout.NORTH);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 
         // Display the frame
