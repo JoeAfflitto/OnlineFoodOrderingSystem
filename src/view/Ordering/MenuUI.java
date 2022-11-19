@@ -5,6 +5,7 @@ import model.Restauraunts.ProductTableModel;
 import model.Restauraunts.Restaurant;
 
 import javax.swing.*;
+import javax.swing.JLabel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,6 +21,7 @@ public class MenuUI extends JFrame implements ActionListener {
     JButton btnShowMenu;
     JPanel menuPanel;
     boolean menuVisible = false;
+
 
     public MenuUI(ProductTableModel tableModel, OrderController orderController) {
         controller = orderController;
@@ -50,6 +52,8 @@ public class MenuUI extends JFrame implements ActionListener {
         menuPanel = new JPanel();
         menuPanel.add(btnShowMenu);
 
+
+
         // General window configurations
         this.setSize(500, 400);
         this.setLocationRelativeTo(null);
@@ -61,6 +65,7 @@ public class MenuUI extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 
+
         // Display the frame
         this.setVisible(true);
     }
@@ -69,6 +74,7 @@ public class MenuUI extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == btnAddToCart){
             controller.addToCart(table.getSelectedRow(), 1);
+            // Update total
         }
 
         if(e.getSource() == btnGoCheckout){

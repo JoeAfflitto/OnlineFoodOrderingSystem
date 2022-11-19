@@ -38,6 +38,8 @@ public class CartView extends JFrame implements ActionListener {
         ctl = cont;
         this.initComponents();
         this.setVisible(true);
+
+
     }
 
     private void initComponents() {
@@ -52,6 +54,12 @@ public class CartView extends JFrame implements ActionListener {
         table.setFillsViewportHeight(true);
         scrollPane1.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         tablePanel.add(scrollPane1);
+
+
+        // Add order total
+        double total = ctl.getTotal();
+        JLabel orderTotal = new JLabel("Order Total: $" + total);
+        tablePanel.add(orderTotal, BorderLayout.SOUTH);
 
         // Toolbar setup
         toolBar = new JToolBar();
@@ -86,7 +94,7 @@ public class CartView extends JFrame implements ActionListener {
         this.getContentPane().add(tablePanel, BorderLayout.CENTER);
         this.getContentPane().add(toolBar, BorderLayout.SOUTH);
 
-        this.setSize(500, 400);
+        this.setSize(500, 550);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

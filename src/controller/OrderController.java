@@ -23,6 +23,9 @@ public class OrderController {
 
     private JFrame ui;
 
+    // Order total
+    double total = 0;
+
     public OrderController(EndUser current) throws Exception {
         this.currentUser = current;
         cartItems = new ArrayList<>();
@@ -102,10 +105,19 @@ public class OrderController {
                 if (c.getItemDesc().equals(selectedItem.getDesc())) {
                     c.setQuantity(c.getQuantity() + 1);
                     isFound = true;
+                    total = total + selectedItem.getPrice();
                 }
             }
         }
-        if(!isFound)
+        if(!isFound) {
             cartItems.add(selectedItem.toCartItem(quantity));
+            total = total + selectedItem.getPrice();
+        }
     }
+
+    public double getTotal(){
+        return total;
+    }
+
+
 }
