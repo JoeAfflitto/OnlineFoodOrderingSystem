@@ -24,7 +24,7 @@ public class OrderController {
     private JFrame ui;
 
     // Order total
-    double total = 0;
+    private double total;
 
     public OrderController(EndUser current) throws Exception {
         this.currentUser = current;
