@@ -1,15 +1,13 @@
-package model.Restauraunts;
-
-import model.Cart.CartItem;
+package model.Cart;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 
-public class CartItemTableModel extends AbstractTableModel {
-    private String[] colNames = {"Name", "Description", "Unit Price", "Quantity"};
+public class CartDetailTableModel extends AbstractTableModel {
+    private String[] colNames = {"Item Title", "Description", "Quantity"};
     private ArrayList<CartItem> cartList;
 
-    public CartItemTableModel(ArrayList<CartItem> selectionList){
+    public CartDetailTableModel(ArrayList<CartItem> selectionList){
         this.cartList = selectionList;
     }
     @Override
@@ -32,8 +30,6 @@ public class CartItemTableModel extends AbstractTableModel {
            case 1:
                return current.getItemDesc();
            case 2:
-               return Double.toString(current.getUnitPrice());
-           case 3:
                return Integer.toString(current.getQuantity());
        }
 

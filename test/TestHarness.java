@@ -1,13 +1,11 @@
+import controller.EmployeeController;
 import controller.LoginController;
-import model.Users.Product;
-import view.Universal.LoginUI;
-
-import javax.swing.*;
-import java.util.ArrayList;
+import model.Restauraunts.Restaurant;
+import model.Users.Employee;
 
 
 /**
- * Original TestHarness class, probably trashing
+ * Original TestHarness class
  */
 public class TestHarness {
     public static void main(String[] args) throws Exception {
@@ -16,6 +14,6 @@ public class TestHarness {
         // Employee:  empUser / empPassword
         // Manager:  managerUser / managerPassword
 
-        LoginController lc = new LoginController();
+         LoginController lc = new LoginController();
     }
 }

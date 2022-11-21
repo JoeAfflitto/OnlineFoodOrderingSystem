@@ -1,6 +1,6 @@
-package view.Ordering;
+package view.EndUsers;
 
-import controller.OrderController;
+import controller.EndUseController;
 import model.Users.EndUser;
 
 import javax.swing.*;
@@ -11,13 +11,13 @@ import java.awt.event.ActionListener;
 public class RestaurantSelectionUI extends JFrame implements ActionListener {
     private JPanel tablePanel;
     private JTable table;
-    private OrderController controller;
+    private EndUseController controller;
     private JScrollPane tableScroller;
     private JPanel buttonPanel;
     private JButton btnSelect;
 
 
-    public RestaurantSelectionUI(OrderController ctl){
+    public RestaurantSelectionUI(EndUseController ctl){
         controller = ctl;
         initComponents();
     }
@@ -73,6 +73,6 @@ public class RestaurantSelectionUI extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) throws Exception {
-        RestaurantSelectionUI ui = new RestaurantSelectionUI(new OrderController(new EndUser("endUser", "endPassword")));
+        RestaurantSelectionUI ui = new RestaurantSelectionUI(new EndUseController(new EndUser("endUser", "endPassword")));
     }
 }

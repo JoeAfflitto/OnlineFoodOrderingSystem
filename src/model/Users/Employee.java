@@ -1,5 +1,6 @@
 package model.Users;
 
+import controller.EmployeeController;
 import model.Restauraunts.Restaurant;
 
 public class Employee extends AbstractUser implements User {
@@ -24,7 +25,7 @@ public class Employee extends AbstractUser implements User {
      */
     @Override
     public void directController() {
-        // new EmployeeUI(this);
+        new EmployeeController(this);
     }
 
     /**

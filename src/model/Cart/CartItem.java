@@ -1,4 +1,4 @@
-package model.Restauraunts;
+package model.Cart;
 
 public class CartItem {
     private String itemName;

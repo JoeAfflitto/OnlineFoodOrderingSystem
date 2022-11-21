@@ -1,6 +1,6 @@
 package model.Users;
 
-import model.Restauraunts.CartItem;
+import model.Cart.CartItem;
 
 public class Product {
     private String name;

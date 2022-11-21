@@ -1,23 +1,25 @@
 package controller;
 
+import model.Cart.CartItem;
 import model.Restauraunts.*;
+import model.Cart.Cart;
 import model.Users.EndUser;
 import model.Users.Product;
-import view.Ordering.CartView;
-import view.Ordering.MenuUI;
-import view.Ordering.PaymentView;
-import view.Ordering.RestaurantSelectionUI;
+import view.EndUsers.CartView;
+import view.EndUsers.MenuUI;
+import view.EndUsers.PaymentView;
+import view.EndUsers.RestaurantSelectionUI;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 
-public class OrderController {
+public class EndUseController {
     private EndUser currentUser;
     private ArrayList<Restaurant> theRestaurantList;
     private RestaurantTableModel restaurantTableModel;
     private CartItemTableModel cartItemTableModel;
     private ArrayList<CartItem> cartItems;
+    private Cart cart;
     private ProductTableModel productTableModel;
     private Restaurant selectedRestaurant;
 
@@ -26,9 +28,11 @@ public class OrderController {
     // Order total
     private double total;
 
-    public OrderController(EndUser current) throws Exception {
+    public EndUseController(EndUser current) throws Exception {
         this.currentUser = current;
-        cartItems = new ArrayList<>();
+
+        cart = new Cart(this.currentUser);
+        // cartItems = new ArrayList<>();
 
         // Import restaurant objects
         createRestaurantList();
@@ -71,7 +75,7 @@ public class OrderController {
     }
 
     public void toCartUI(){
-        cartItemTableModel = new CartItemTableModel(cartItems);
+        cartItemTableModel = new CartItemTableModel(cart.getCartItems());
         ui.setVisible(false);
         ui = new CartView(this);
     }
@@ -100,7 +104,7 @@ public class OrderController {
         boolean isFound = false;
 
         // First check if any of item is already in cart
-        for(CartItem c: cartItems){
+        for(CartItem c: cart.getCartItems()){
             if(c.getItemName().equals(selectedItem.getName())) {
                 if (c.getItemDesc().equals(selectedItem.getDesc())) {
                     c.setQuantity(c.getQuantity() + 1);
@@ -110,7 +114,7 @@ public class OrderController {
             }
         }
         if(!isFound) {
-            cartItems.add(selectedItem.toCartItem(quantity));
+            cart.addItem(selectedItem.toCartItem(quantity));
             total = total + selectedItem.getPrice();
         }
     }
@@ -118,6 +122,5 @@ public class OrderController {
     public double getTotal(){
         return total;
     }
-
 
 }

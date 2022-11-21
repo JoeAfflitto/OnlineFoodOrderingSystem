@@ -1,7 +1,5 @@
 package model.Users;
 
-import controller.OrderController;
-
 public abstract class AbstractUser {
 
 

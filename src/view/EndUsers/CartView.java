@@ -1,6 +1,6 @@
-package view.Ordering;
+package view.EndUsers;
 
-import controller.OrderController;
+import controller.EndUseController;
 import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
@@ -22,7 +22,7 @@ public class CartView extends JFrame implements ActionListener {
     private JScrollPane scrollPane1;
 
     // Controller var
-    OrderController ctl;
+    EndUseController ctl;
 
     // Toolbar
     JToolBar toolBar;
@@ -34,7 +34,7 @@ public class CartView extends JFrame implements ActionListener {
     JDatePanelImpl datePanel;
     JDatePickerImpl datePicker;
 
-    public CartView(OrderController cont) {
+    public CartView(EndUseController cont) {
         ctl = cont;
         this.initComponents();
         this.setVisible(true);

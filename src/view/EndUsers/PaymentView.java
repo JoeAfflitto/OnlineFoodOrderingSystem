@@ -1,4 +1,4 @@
-package view.Ordering;
+package view.EndUsers;
 
 import javax.swing.*;
 import java.awt.*;

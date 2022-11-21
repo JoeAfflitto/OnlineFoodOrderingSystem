@@ -1,6 +1,6 @@
 package model.Users;
 
-import controller.OrderController;
+import controller.EndUseController;
 
 /**
  * Datatype model for end-user information processing
@@ -21,7 +21,7 @@ public class EndUser extends AbstractUser implements User{
      */
     @Override
     public void directController() throws Exception {
-        new OrderController(this);
+        new EndUseController(this);
     }
 
     @Override

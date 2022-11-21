@@ -1,17 +1,15 @@
-package view.Ordering;
+package view.EndUsers;
 
-import controller.OrderController;
+import controller.EndUseController;
 import model.Restauraunts.ProductTableModel;
-import model.Restauraunts.Restaurant;
 
 import javax.swing.*;
-import javax.swing.JLabel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MenuUI extends JFrame implements ActionListener {
-    OrderController controller;
+    EndUseController controller;
     JPanel tablePanel;
     JTable table;
     JButton btnAddToCart;
@@ -23,8 +21,8 @@ public class MenuUI extends JFrame implements ActionListener {
     boolean menuVisible = false;
 
 
-    public MenuUI(ProductTableModel tableModel, OrderController orderController) {
-        controller = orderController;
+    public MenuUI(ProductTableModel tableModel, EndUseController endUseController) {
+        controller = endUseController;
         table = new JTable(tableModel);
         initComponents();
     }
