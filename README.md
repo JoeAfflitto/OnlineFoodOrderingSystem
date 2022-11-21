@@ -8,3 +8,7 @@
 <h2>Joseph Afflitto</h2>
 <ul>Employee fulfilling order use-case implementation</ul>
 <ul>(some) code refactoring / cleaning</ul>
+<h2>Cole Winters</h2>
+<ul>refactoring/cleaning</ul>
+<h2>Adam Mogolowitz</h2>
+<ul>Payment UI for end user</ul>
