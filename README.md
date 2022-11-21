@@ -1,12 +1,13 @@
  <h1>Valid credential username / password list:</h1>
-<h2>(Use endUser)</h2>
-    End-user: endUser / endPassword
-    Employee: empUser / empPassword
-    Manager: managerUser / managerPassword
+
+    End-user: endUser / endPassword : functional
+    Employee: empUser / empPassword : functional
+    Manager: managerUser / managerPassword : not implemented
 
 <h1>M04-A03</h1>
 <h2>Joseph Afflitto</h2>
 <h3>Employee fulfilling order use-case implementation</h3>
+<h4>(some) code refactoring / cleaning</h4>
 
 
 <h1>Design Patterns</h1>
