@@ -1,6 +1,7 @@
 package model.Users;
 
 import model.Restauraunts.Restaurant;
+import view.Managers.ManagerPanel;
 
 /**
  * Datatype model for manager users
@@ -18,7 +19,7 @@ public class Manager extends AbstractUser implements User {
 
     @Override
     public void directController() {
-        // new ManagerUI(this);
+        new ManagerPanel(this);
     }
 
     @Override
