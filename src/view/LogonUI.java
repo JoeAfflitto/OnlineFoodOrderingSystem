@@ -6,8 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Not yet implemented in actual program
- * To be improved Login window
+ * Not implemented
+ *
  */
 public class LogonUI extends JFrame implements ActionListener {
     JLabel nameLabel;
