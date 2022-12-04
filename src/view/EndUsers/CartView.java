@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -58,7 +59,8 @@ public class CartView extends JFrame implements ActionListener {
 
         // Add order total
         double total = ctl.getTotal();
-        JLabel orderTotal = new JLabel("Order Total: $" + total);
+        DecimalFormat f = new DecimalFormat("##.00");
+        JLabel orderTotal = new JLabel("Order Total: $" + f.format(total));
         tablePanel.add(orderTotal, BorderLayout.SOUTH);
 
         // Toolbar setup
