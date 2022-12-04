@@ -14,7 +14,7 @@ public class ManagerPanel extends JFrame implements ActionListener {
     }
     private Manager current;
     private JPanel actionPanel;
-    private JButton btnStaffOptions;
+    private JButton btnStaffOptions, btnStoreInfo;
 
     public ManagerPanel(Manager manager){
         this.current = manager;
@@ -28,6 +28,7 @@ public class ManagerPanel extends JFrame implements ActionListener {
 
         // Action buttons configs
         btnStaffOptions = new JButton("Staff Options");
+        btnStoreInfo = new JButton("Store Info");
         actionPanel.add(btnStaffOptions);
 
         // Window Config
