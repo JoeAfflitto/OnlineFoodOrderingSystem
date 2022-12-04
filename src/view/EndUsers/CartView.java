@@ -61,6 +61,7 @@ public class CartView extends JFrame implements ActionListener {
         double total = ctl.getTotal();
         DecimalFormat f = new DecimalFormat("##.00");
         JLabel orderTotal = new JLabel("Order Total: $" + f.format(total));
+
         tablePanel.add(orderTotal, BorderLayout.SOUTH);
 
         // Toolbar setup
