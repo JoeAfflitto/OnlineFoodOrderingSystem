@@ -2,8 +2,6 @@ package view.Employees;
 
 import controller.EmployeeController;
 import controller.LoginController;
-import view.LogonUI;
-import view.Universal.LoginUI;
 
 import javax.swing.*;
 import java.awt.*;
