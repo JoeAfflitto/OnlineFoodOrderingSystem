@@ -5,10 +5,7 @@ import model.Restauraunts.*;
 import model.Cart.Cart;
 import model.Users.EndUser;
 import model.Users.Product;
-import view.EndUsers.CartView;
-import view.EndUsers.MenuUI;
-import view.EndUsers.PaymentView;
-import view.EndUsers.RestaurantSelectionUI;
+import view.EndUsers.*;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -82,7 +79,7 @@ public class EndUseController {
 
     public void toPaymentUI(){
         ui.setVisible(false);
-        ui = new PaymentView();
+        ui = new PaymentView(this);
     }
 
     /**
@@ -123,4 +120,7 @@ public class EndUseController {
         return total;
     }
 
+    public void toReceiptView() {
+        this.ui = new ReceiptView();
+    }
 }
