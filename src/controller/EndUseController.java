@@ -34,7 +34,7 @@ public class EndUseController {
         // cartItems = new ArrayList<>();
 
         // Setup values dependent on restaurant list
-        this.restaurantTableModel = new RestaurantTableModel(rd.getTheRestaurantList());
+        this.restaurantTableModel = rd.getRestaurantTableModel();
 
         // Load first UI frame for end-user flow
         this.ui = new RestaurantSelectionUI(this);

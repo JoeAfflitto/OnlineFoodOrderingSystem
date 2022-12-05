@@ -26,4 +26,10 @@ public class RestaurantData {
     public Restaurant getRestaurant(int index){
         return this.getTheRestaurantList().get(index);
     }
+
+    public RestaurantTableModel getRestaurantTableModel() {
+        return new RestaurantTableModel(this.getTheRestaurantList());
+    }
+
+
 }
