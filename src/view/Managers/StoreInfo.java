@@ -28,7 +28,7 @@ public class StoreInfo extends JFrame implements ActionListener {
 
     public void initComponents() {
         salesForRest = new HashMap<>();
-        salesForRest.put("Mcdonalds", "$10,000");
+        salesForRest.put("Mcdonald's", "$10,000");
         salesForRest.put("Chipotle", "$25,000");
 
         // Mainframe configuration

@@ -17,31 +17,10 @@ public class Restaurant implements Serializable {
     private ArrayList<User> userList;
     private ArrayList<Product> productList;
 
-
     public Restaurant(String title) {
         this.businessName = title;
         this.userList = new ArrayList<>();
-        setProductList();
-    }
-
-    private void setProductList() {
-
         this.productList = new ArrayList<>();
-
-        // Decorator: Ability to modify menu items and restaurant names (in OrderController class)
-
-        if (this.businessName.equalsIgnoreCase("McDonalds")){
-            productList.add(new Product("Burger", 5.59, "1/4 Pounder"));
-            productList.add(new Product("Burger", 6.59, "Big Mac"));
-            productList.add(new Product("Chicken", 5.59, "10 pc. Nugget"));
-        }
-        else if (this.businessName.equalsIgnoreCase("Chipotle")){
-            productList.add(new Product("Burrito", 7.79, "Carnitas"));
-            productList.add(new Product("Tacos", 6.99, "Chicken"));
-            productList.add(new Product("Quesadilla", 7.49, "Steak"));
-        }
-
-
     }
 
     public ArrayList<Product> getTheProductList(){
