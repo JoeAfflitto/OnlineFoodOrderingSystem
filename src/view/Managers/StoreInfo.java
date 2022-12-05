@@ -12,10 +12,6 @@ import java.awt.event.ActionListener;
 import java.util.HashMap;
 
 public class StoreInfo extends JFrame implements ActionListener {
-
-
-
-
     private JPanel tablePanel, buttonPanel, salesPanel;
     private JTable table;
     private EndUseController controller;
@@ -46,7 +42,7 @@ public class StoreInfo extends JFrame implements ActionListener {
 
         // Table panel configuration
         tablePanel = new JPanel();
-        table = new JTable(controller.getTheTableModel()); // Of type RestaurantTableModel
+        table = new JTable(controller.getTheTableModel());
 
         // Scroller configuration
         tableScroller = new JScrollPane(table);

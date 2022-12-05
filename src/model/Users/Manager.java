@@ -12,10 +12,9 @@ public class Manager extends AbstractUser implements User {
     private String logonPass;
     private Restaurant organization;
 
-    public Manager(String lName, String lPass, Restaurant restaurant){
+    public Manager(String lName, String lPass){
         this.logonName = lName;
         this.logonPass = lPass;
-        this.organization = restaurant;
     }
 
     @Override

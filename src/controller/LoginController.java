@@ -1,6 +1,7 @@
 package controller;
 
 import model.Restauraunts.Restaurant;
+import model.Restauraunts.RestaurantData;
 import model.Users.*;
 import view.Universal.LoginUI;
 import view.Universal.LoginWindow;
@@ -15,20 +16,19 @@ public class LoginController {
     ArrayList<User> users;
     User currentUser;
     JFrame logonUI;
+    RestaurantData rd;
 
     public LoginController(){
-        this.users = new ArrayList<>();
+        rd = new RestaurantData();
+        this.users = rd.getAllUsers();
         addTestData();
-        this.logonUI = new LoginWindow(this); // joe LoginUI(this);
 
+        this.logonUI = new LoginWindow(this);
     }
 
     public LoginController(boolean visible){
         this.users = new ArrayList<>();
         addTestData();
-
-//        this.logonUI = new LoginWindow(this); // joe LoginUI(this);
-
     }
 
     /**
@@ -40,7 +40,7 @@ public class LoginController {
         Restaurant smoothieKing = new Restaurant("Smoothie King");
         users.add(new Employee("empUser", "empPassword", smoothieKing));
 
-        users.add(new Manager("managerUser", "managerPassword", smoothieKing));
+        users.add(new Manager("managerUser", "managerPassword"));
     }
 
     /**
