@@ -11,6 +11,9 @@ import view.Employees.EmplFrame;
 import javax.swing.*;
 import java.util.ArrayList;
 
+/**
+ * Employee-user program controller
+ */
 public class EmployeeController {
     private Employee currentEmpl;
     private JFrame ui;

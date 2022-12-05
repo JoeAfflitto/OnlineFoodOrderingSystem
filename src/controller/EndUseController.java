@@ -11,6 +11,9 @@ import view.EndUsers.*;
 import javax.swing.*;
 import java.util.ArrayList;
 
+/**
+ * End-user program controller
+ */
 public class EndUseController {
     private RestaurantData rd;
     private EndUser currentUser;
@@ -26,17 +29,11 @@ public class EndUseController {
     // Order total
     private double total;
 
-    public EndUseController(EndUser current) throws Exception {
+    public EndUseController(EndUser current) {
         this.currentUser = current;
         this.rd = new RestaurantData();
-
         cart = new Cart(this.currentUser);
-        // cartItems = new ArrayList<>();
-
-        // Setup values dependent on restaurant list
         this.restaurantTableModel = rd.getRestaurantTableModel();
-
-        // Load first UI frame for end-user flow
         this.ui = new RestaurantSelectionUI(this);
 
     }

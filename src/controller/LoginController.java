@@ -10,7 +10,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 /**
- * Manages the logon processes
+ * Logon flow controller
  */
 public class LoginController {
     ArrayList<User> users;

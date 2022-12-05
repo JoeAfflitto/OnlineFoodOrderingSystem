@@ -6,6 +6,9 @@ import view.Managers.ManagerPanel;
 
 import javax.swing.*;
 
+/**
+ * Manager program controller
+ */
 public class ManagerController {
     private JFrame ui;
     private InfoTableModel infoTableModel;
