@@ -23,6 +23,14 @@ public class LoginController {
 
     }
 
+    public LoginController(boolean visible){
+        this.users = new ArrayList<>();
+        addTestData();
+
+//        this.logonUI = new LoginWindow(this); // joe LoginUI(this);
+
+    }
+
     /**
      * Inserts testable user credentials into the users ArrayList
      */

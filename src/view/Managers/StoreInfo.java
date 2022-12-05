@@ -1,6 +1,7 @@
 package view.Managers;
 
 import controller.EndUseController;
+import controller.LoginController;
 import model.Restauraunts.Restaurant;
 import model.Users.Manager;
 
@@ -21,11 +22,12 @@ public class StoreInfo extends JFrame implements ActionListener {
     private JScrollPane tableScroller;
     private JButton btnSelect;
     private HashMap<String, String> salesForRest;
+    private JLabel restSales;
 
-    public StoreInfo(EndUseController ctl){
-
+    public StoreInfo() throws Exception {
+        controller = new EndUseController(new LoginController(false));
         initComponents();
-        controller = ctl;
+
     }
 
     public void initComponents() {
@@ -38,17 +40,18 @@ public class StoreInfo extends JFrame implements ActionListener {
 
         //Sales Panel
         JLabel salesForRestLabel = new JLabel("Sales:");
+        restSales = new JLabel("");
         salesPanel = new JPanel();
         salesPanel.add(salesForRestLabel);
 
         // Table panel configuration
         tablePanel = new JPanel();
-       // table = new JTable(controller.getTheTableModel());
+        table = new JTable(controller.getTheTableModel());
 
         // Scroller configuration
         tableScroller = new JScrollPane(table);
         tableScroller.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        tableScroller.setPreferredSize(new Dimension(350, 300));
+        tableScroller.setPreferredSize(new Dimension(250, 300));
         tablePanel.add(tableScroller);
 
         // Button configs
@@ -80,7 +83,9 @@ public class StoreInfo extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnSelect){
-
+            table.getSelectedRow();
+            Restaurant selected = controller.getRestaurant((table.getSelectedRow()));
+            restSales.setText(selected.getBusinessName() + ": " + salesForRest.get(selected.getBusinessName()));
         }
     }
 }

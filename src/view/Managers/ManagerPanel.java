@@ -1,6 +1,8 @@
 package view.Managers;
 
+import controller.EndUseController;
 import model.Restauraunts.Restaurant;
+import model.Users.EndUser;
 import model.Users.Manager;
 
 import javax.swing.*;
@@ -15,6 +17,7 @@ public class ManagerPanel extends JFrame implements ActionListener {
     private Manager current;
     private JPanel actionPanel;
     private JButton btnStaffOptions, btnStoreInfo;
+    private JFrame ui;
 
     public ManagerPanel(Manager manager){
         this.current = manager;
@@ -29,13 +32,17 @@ public class ManagerPanel extends JFrame implements ActionListener {
         // Action buttons configs
         btnStaffOptions = new JButton("Staff Options");
         btnStoreInfo = new JButton("Store Info");
+        btnStoreInfo.addActionListener(this);
         actionPanel.add(btnStaffOptions);
+        JPanel secondPanel = new JPanel();
+        secondPanel.add(btnStoreInfo);
 
         // Window Config
         BorderLayout layout = new BorderLayout();
 
         this.setContentPane(new JPanel(layout));
         this.getContentPane().add(actionPanel, BorderLayout.CENTER);
+        this.getContentPane().add(secondPanel, BorderLayout.WEST);
         //this.getContentPane().add(toolBar, BorderLayout.SOUTH);
         this.setTitle("Managerial View");
         this.setSize(500, 550);
@@ -46,6 +53,14 @@ public class ManagerPanel extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == btnStoreInfo){
+            this.setVisible(false);
+            try {
+                this.ui = new StoreInfo();
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
 
+        }
     }
 }

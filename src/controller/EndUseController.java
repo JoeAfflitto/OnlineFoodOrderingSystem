@@ -5,6 +5,8 @@ import model.Restauraunts.*;
 import model.Cart.Cart;
 import model.Users.EndUser;
 import model.Users.Product;
+import model.Users.User;
+import sun.rmi.runtime.Log;
 import view.EndUsers.*;
 
 import javax.swing.*;
@@ -42,6 +44,25 @@ public class EndUseController {
 
     }
 
+    public EndUseController(LoginController controller) throws Exception {
+        User current = controller.users.get(0);
+        EndUser test = new EndUser(current.getUsername(), current.getPassword());
+        this.currentUser = test;
+
+        cart = new Cart(this.currentUser);
+        // cartItems = new ArrayList<>();
+
+        // Import restaurant objects
+        createRestaurantList();
+
+        // Setup values dependent on restaurant list
+        this.restaurantTableModel = new RestaurantTableModel(theRestaurantList);
+
+        // Load first UI frame for end-user flow
+        //this.ui = new RestaurantSelectionUI(this);
+
+    }
+
     /**
      * Creates testable restaurants
      */
@@ -69,6 +90,11 @@ public class EndUseController {
         selectedRestaurant = theRestaurantList.get(selection);
         this.ui.setVisible(false);
         this.ui = new MenuUI(new ProductTableModel(theRestaurantList.get(selection)), this);
+    }
+
+    public Restaurant getRestaurant(int selection){
+        selectedRestaurant = theRestaurantList.get(selection);
+        return theRestaurantList.get(selection);
     }
 
     public void toCartUI(){
