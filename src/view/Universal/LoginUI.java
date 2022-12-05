@@ -42,15 +42,16 @@ public class LoginUI extends JFrame {
         passwordField = new JPasswordField();
 
 
+
         // Insertion
         mainPanel.add(loginButton, BorderLayout.SOUTH);
         this.setContentPane(mainPanel);
 
         // Window Configs
         this.setSize(500, 400);
-        this.setLocationRelativeTo(null);
         this.setContentPane(mainPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 }

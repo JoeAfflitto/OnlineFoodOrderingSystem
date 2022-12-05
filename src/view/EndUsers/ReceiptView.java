@@ -25,13 +25,13 @@ public class ReceiptView extends JFrame implements ActionListener {
         // Window config
         this.setTitle("Receipt View");
         this.setSize(500, 400);
-        this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(headerPanel, BorderLayout.NORTH);
         this.getContentPane().add(bodyPanel, BorderLayout.CENTER);
         this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
 
     }
     @Override

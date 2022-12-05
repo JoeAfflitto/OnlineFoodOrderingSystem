@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 public class PaymentView extends JFrame implements ActionListener {
 
@@ -81,7 +82,7 @@ public class PaymentView extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == payButton){
             if(!nameField.getText().isEmpty() && !cardField.getText().isEmpty() && !expField.getText().isEmpty()) {
-                this.setVisible(false);
+                frame.setVisible(false);
                 controller.toReceiptView();
             }
         }
