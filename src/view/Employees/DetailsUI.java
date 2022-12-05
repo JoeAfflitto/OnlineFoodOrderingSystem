@@ -47,7 +47,7 @@ public class DetailsUI extends JFrame implements ActionListener {
         markAsDone.addActionListener(this);
 
         // General window configurations
-        this.setSize(500, 400);
+        this.setSize(400, 420);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(panel, BorderLayout.CENTER);
