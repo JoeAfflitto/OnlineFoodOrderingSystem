@@ -1,6 +1,7 @@
 package view.Managers;
 
 import controller.EndUseController;
+import controller.ManagerController;
 import model.Restauraunts.Restaurant;
 import model.Users.EndUser;
 import model.Users.Manager;
@@ -12,15 +13,15 @@ import java.awt.event.ActionListener;
 
 public class ManagerPanel extends JFrame implements ActionListener {
     public static void main(String[] args) {
-        ManagerPanel managerPanel = new ManagerPanel(new Manager("asdf","asdf", new Restaurant("Test")));
+        // anagerPanel managerPanel = new ManagerPanel(new Manager("asdf","asdf", new Restaurant("Test")));
     }
-    private Manager current;
+    private ManagerController controller;
     private JPanel actionPanel;
     private JButton btnStaffOptions, btnStoreInfo;
     private JFrame ui;
 
-    public ManagerPanel(Manager manager){
-        this.current = manager;
+    public ManagerPanel(ManagerController ctl){
+        this.controller = ctl;
 
         initComponents();
     }

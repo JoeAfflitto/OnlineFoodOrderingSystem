@@ -46,7 +46,7 @@ public class StoreInfo extends JFrame implements ActionListener {
 
         // Table panel configuration
         tablePanel = new JPanel();
-        table = new JTable(controller.getTheTableModel());
+        table = new JTable(controller.getTheTableModel()); // Of type RestaurantTableModel
 
         // Scroller configuration
         tableScroller = new JScrollPane(table);

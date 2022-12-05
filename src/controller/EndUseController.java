@@ -6,15 +6,14 @@ import model.Cart.Cart;
 import model.Users.EndUser;
 import model.Users.Product;
 import model.Users.User;
-import sun.rmi.runtime.Log;
 import view.EndUsers.*;
 
 import javax.swing.*;
 import java.util.ArrayList;
 
 public class EndUseController {
+    private RestaurantData rd;
     private EndUser currentUser;
-    private ArrayList<Restaurant> theRestaurantList;
     private RestaurantTableModel restaurantTableModel;
     private CartItemTableModel cartItemTableModel;
     private ArrayList<CartItem> cartItems;
@@ -29,15 +28,13 @@ public class EndUseController {
 
     public EndUseController(EndUser current) throws Exception {
         this.currentUser = current;
+        this.rd = new RestaurantData();
 
         cart = new Cart(this.currentUser);
         // cartItems = new ArrayList<>();
 
-        // Import restaurant objects
-        createRestaurantList();
-
         // Setup values dependent on restaurant list
-        this.restaurantTableModel = new RestaurantTableModel(theRestaurantList);
+        this.restaurantTableModel = new RestaurantTableModel(rd.getTheRestaurantList());
 
         // Load first UI frame for end-user flow
         this.ui = new RestaurantSelectionUI(this);
@@ -45,38 +42,15 @@ public class EndUseController {
     }
 
     public EndUseController(LoginController controller) throws Exception {
+        this.rd = new RestaurantData();
         User current = controller.users.get(0);
         EndUser test = new EndUser(current.getUsername(), current.getPassword());
         this.currentUser = test;
 
         cart = new Cart(this.currentUser);
-        // cartItems = new ArrayList<>();
-
-        // Import restaurant objects
-        createRestaurantList();
 
         // Setup values dependent on restaurant list
-        this.restaurantTableModel = new RestaurantTableModel(theRestaurantList);
-
-        // Load first UI frame for end-user flow
-        //this.ui = new RestaurantSelectionUI(this);
-
-    }
-
-    /**
-     * Creates testable restaurants
-     */
-
-
-
-    private void createRestaurantList() {
-        theRestaurantList = new ArrayList<>();
-        Restaurant one = new Restaurant("McDonalds");
-        theRestaurantList.add(one);
-        Restaurant two = new Restaurant("Chipotle");
-        theRestaurantList.add(two);
-
-        // Can continue adding/updating restaurants
+        this.restaurantTableModel = new RestaurantTableModel(rd.getTheRestaurantList());
 
     }
 
@@ -87,14 +61,14 @@ public class EndUseController {
         this.ui = new RestaurantSelectionUI(this);
     }
     public void toMenuUI(int selection){
-        selectedRestaurant = theRestaurantList.get(selection);
+        selectedRestaurant = rd.getRestaurant(selection);
         this.ui.setVisible(false);
-        this.ui = new MenuUI(new ProductTableModel(theRestaurantList.get(selection)), this);
+        this.ui = new MenuUI(new ProductTableModel(rd.getRestaurant(selection)), this);
     }
 
     public Restaurant getRestaurant(int selection){
-        selectedRestaurant = theRestaurantList.get(selection);
-        return theRestaurantList.get(selection);
+        selectedRestaurant = rd.getRestaurant(selection);
+        return rd.getRestaurant(selection);
     }
 
     public void toCartUI(){

@@ -1,5 +1,6 @@
 package model.Users;
 
+import controller.ManagerController;
 import model.Restauraunts.Restaurant;
 import view.Managers.ManagerPanel;
 
@@ -19,7 +20,7 @@ public class Manager extends AbstractUser implements User {
 
     @Override
     public void directController() {
-        new ManagerPanel(this);
+        new ManagerController(this);
     }
 
     @Override
