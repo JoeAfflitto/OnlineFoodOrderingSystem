@@ -1,8 +1,8 @@
  <h1>Valid credential username / password list:</h1>
 
-    End-user: endUser / endPassword : functional
-    Employee: empUser / empPassword : functional as of M04-A03
-    Manager: managerUser / managerPassword : not implemented
+    End-user: endUser / endPassword
+    Employee: empUser / empPassword
+    Manager: managerUser / managerPassword
 
 <h1>M04-A03</h1>
 <ul>*Run TestHarness class for GUI*</ul>
