@@ -28,7 +28,7 @@ public class StoreInfo extends JFrame implements ActionListener {
 
     public void initComponents() {
         salesForRest = new HashMap<>();
-        salesForRest.put("Mcdonald's", "$10,000");
+        salesForRest.put("McDonald's", "$10,000");
         salesForRest.put("Chipotle", "$25,000");
 
         // Mainframe configuration
@@ -36,9 +36,10 @@ public class StoreInfo extends JFrame implements ActionListener {
 
         //Sales Panel
         JLabel salesForRestLabel = new JLabel("Sales:");
-        restSales = new JLabel("");
+        restSales = new JLabel();
         salesPanel = new JPanel();
         salesPanel.add(salesForRestLabel);
+        salesPanel.add(restSales);
 
         // Table panel configuration
         tablePanel = new JPanel();
@@ -79,7 +80,6 @@ public class StoreInfo extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnSelect){
-            table.getSelectedRow();
             Restaurant selected = controller.getRestaurant((table.getSelectedRow()));
             restSales.setText(selected.getBusinessName() + ": " + salesForRest.get(selected.getBusinessName()));
         }
