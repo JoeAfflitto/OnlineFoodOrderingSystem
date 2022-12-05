@@ -1,7 +1,9 @@
 import controller.EmployeeController;
+import controller.EndUseController;
 import controller.LoginController;
 import model.Restauraunts.Restaurant;
 import model.Users.Employee;
+import model.Users.EndUser;
 
 
 /**
@@ -14,6 +16,8 @@ public class TestHarness {
         // Employee:  empUser / empPassword
         // Manager:  managerUser / managerPassword
 
-         LoginController lc = new LoginController();
+        LoginController lc = new LoginController();
+
+        // EndUseController controller = new EndUseController(new EndUser("asdf","asdf"));
     }
 }
